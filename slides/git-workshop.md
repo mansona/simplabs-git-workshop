@@ -2,11 +2,25 @@
 
 ---
 
-## Why do we even care?
+![Chris](/images/chris.webp) <!-- .element style="height: 320px;" -->
+
+<div>Chris Manson - @real_ate</div>
 
 Notes:
 
-- the old way of shipping code to production looks something like this…
+- I've just put a bit of an introduction slide in here because I imagine quite a few people here might not know me
+- I'm a massive open source nut, spend a lot of my time hanging out in the Ember Community
+- most of what I know about git comes from trying to fix my own mistakes on public repos over the years
+- Fun fact: my first experience with git was in 2007 when I was working with the KDE open source project while they were in the middle of a process to move from CVS to git
+---
+
+## Why are we here?
+
+Notes:
+
+- I don't mean that as the extestencial question, we would need a longer workshop for that
+- I mean what's the purpose of us getting great at git
+- you could think of the olden-days way of shipping code to production looks something like this…
 
 ---
 
@@ -63,8 +77,10 @@ Notes:
 
 Notes:
 
+**read the title of the slide**
+
 - everyone is familiar with this generally by now and even if some teams would
-  have more branches etc. (which I'd generally advice to avoid though), it's
+  have more branches than just main/master such as develop or release etc. (which I'd generally advice to avoid though), it's
   always the same: branch – validate – merge
 - and virtually everyone is using git for that
 - btw: GitHub and Bitbucket say Pull Requests while GitLab says Merge Request
@@ -108,6 +124,10 @@ Issues aren't just a place to put notes or high level requirements
 
 Notes:
 
+- just a side note: these ideas are taken from the simplabs playbook which you can see at simplabs.com/playbook. You may think that this is a strange tangent for a git workshop but I'm telling you now: if you split your work into smaller managable chunks you will **avoid** most of the problems that you might need expert git skills to save you from.
+
+**read the slide**
+
 - Well-prepared issues are a key element of an effective development process.
   They provide guidance for the project team's work, allow external parties not
   directly involved with the project to get an understanding of what is
@@ -127,7 +147,7 @@ Notes:
 
 ---
 
-#### Good issues aim to:
+#### Aim for Good Issues
 
 - describe what is to be done and why
 - include a course of action
@@ -136,7 +156,11 @@ Notes:
 
 Notes:
 
-- add all context you have, including visual materials, a bit of history and
+**read the slide title**
+
+And what Makes a good issue!
+
+- **read the first point** add all context you have, including visual materials, a bit of history and
   alternatives that have been ruled out and why, etc.
   - the issue is not only written for the person doing the work who maybe has
     all the details in their head somewhere
@@ -146,22 +170,20 @@ Notes:
   - issues are also relevant as historic artifacts when someone (sometimes even
     the issue's author) is trying to understand why something was done in
     hindsight
-- figuring out what individual changes need to be made to close the issue is
+- **read the second point** figuring out what individual changes need to be made to close the issue is
   invaluable for uncovering uncertainties, hidden complexity or blockers
-  - the alternative is you'll run into those later when you have spent time and
-    work already which in the worst case is now useless
+  - a possible alternative to doing this up front is that you'll run into those later when you have spent a tonne of
+    time on this and in the worst case is now useless and has to be thrown away
   - this is not about listing every single code change but listing the
     fundamental steps and most importantly thinking those through
   - if you cannot come up with this list, it's a great indicator the issue is
     not ready to be worked on yet –> do a spike first!
-- the issue should be the central place for all information necessary to
+- **read the thrid point** the issue should be the central place for all information necessary to
   complete it
   - while collecting materials, references, etc. you'll realize if anything is
     missing and the issue is not ready to be worked on yet!
-- separate tasks go into separate issues
+- **read the forth point** separate tasks go into separate issues
   - ideally an issue is only a few days of work
-  - that does not mean, bigger tasks can not be broken down but each issue
-    should "make sense" on its own
 - preparing issues like this takes time and in my experience it's important to
   make clear that this is an essential part of everyone's job
   - this is also not the task of the PM – they will not have the necessary
@@ -177,6 +199,8 @@ Notes:
 provide plannability and focus
 
 Notes:
+
+**read the slide title**
 
 - we prefer saying "iteration" – "sprint" is unfortunate wording since running a
   marathon in a series of sprints will not make you complete the marathon faster
@@ -224,9 +248,13 @@ Notes:
 
 #### Pull Requests/Merge Requests
 
-are about communicating around what's going on
+are about communicating what's going on
 
 Notes:
+
+It's time to make a Pull Request
+
+**read the slide content**
 
 - …take them seriously…
 
@@ -253,22 +281,25 @@ Notes:
 
 Notes:
 
-- combining multiple unrelated issues or changes in one PR makes following what
-  the PR does harder and creates unnecessary dependencies – one change for one
-  issue not being ok also blocks other changes from being merged
-- not providing an overview of what a PR does, why and how means the only way to
+- **read the first point** combining multiple unrelated issues or changes in one PR makes following what
+  the PR does harder and creates unnecessary dependencies
+- another thing to consider is that if you're combining two logical changes in one
+  PR, one of those changes could need further discussion block other changes from being merged.
+  If they were two separate PRs then the non-controversial changes could be merged while you discuss
+  the blocking changes
+- **read the second point** not providing an overview of what a PR does, why and how means the only way to
   find out is be inspecting the changes which might or might not be a trivial
   thing to do
   - not everyone looks at a PR to review and would look at all individual
     changes anyway – maybe someone just wants to follow what's happening or you
     or someone else looks at the PR later to understand a project's history
-- reviewers will want to test changes and must know how to do that
+- **read the thrid point** reviewers will want to test changes and must know how to do that
   - or product experts or other stakeholders are looking at the PR on a preview
     system and might not even be able to infer what, where or how to test from
     looking at the code changes
-- before/after screenshots etc. give a good impression of what a PR does at a
+- **read the forth point** before/after screenshots etc. give a good impression of what a PR does at a
   glance
-- obviously this is useful to be able to understand what task this addresses
+- **read the fifth point** obviously this is useful to be able to understand what task this addresses
   - if merging the PR closes that issue, add something like "closes #ticket"
     (depending on what tool you use)
 - …eventually every PR wants to be merged but before that comes the…
@@ -281,13 +312,15 @@ are for ensuring quality and sharing know-how
 
 Notes:
 
+**read the slide**
+
 - of course you need automated testing but
   - quality isn't correctness: bad code can still work correctly
-  - wrong code with wrong or no tests doesn't make a good package
-- after pairing, reviewing is the best way there is to share know-how
+  - wrong code with wrong or no tests can slip through any automated system
+- also aside from pairing, reviewing is the best way there is to share know-how
   - you don't want to end up with only the author of something knowing anything
     about how it works
-- …to make reviews work and work well though, make sure a PR fulfils the
+- …to make reviews work and work well though, make sure a PR fulfils some basic
   requirements…
 
 ---
@@ -301,17 +334,17 @@ Notes:
 
 Notes:
 
-- it's fine to ask for feedback on a PR that's in progress but for a final
+- **read the first point** it's fine to ask for feedback on a PR that's in progress but for a final
   review the author should consider it to be complete
-- if there are no tests or not enough tests or the tests are failing, it's
+- **read the second point** if there are no tests or not enough tests or the tests are failing, it's
   likely that the non-test changes would have to change again as well as bugs
   are uncovered while adding or fixing tests
   - thus, what anyone would review would likely not be the final changes that
     would be merged
-- while resolving the conflicts, the branch will change, meaning that reviewing
+- **read the third point** while resolving the conflicts, the branch will change, meaning that reviewing
   before those changes would mean not reviewing the final set of changes that
   will be merged
-- it's fine to make a mess on your own branch while you're working on it
+- **read the forth point** it's fine to make a mess on your own branch while you're working on it
   - see above – "my home is my castle"
   - but you don't want to merge that mess back into your main history
   - for bigger or complex PRs, it's sometimes good to review by commit which is
@@ -319,6 +352,17 @@ Notes:
 - these last 2 points is typically what people struggle with
   - …which is why we're doing this workshop
   - …so let's jump right into it…
+
+---
+
+## Break?
+
+Notes:
+
+- I'm going to take a lead from you all, I have places that make sense to have breaks
+  in this workshop but if we need more let me know. This is for you, and if the
+  pacing is wrong please let me know ASAP
+- When is lunch?
 
 ---
 
@@ -350,6 +394,8 @@ Git has 3 kinds of objects, each identified by an object ID (OID, 40 character
 long hashes) and stored in the object database (`./git/objects` folder)
 
 Notes:
+
+**read the slide**
 
 - you'll most often use only the first 8 characters as those are enough to
   uniquely identify things usually
@@ -496,8 +542,6 @@ Your branch is ahead of 'origin/main' by 1 commit.
 
 Untracked files:
   README2.md
-
-nothing added to commit but untracked files present
 ```
 
 ```bash
@@ -583,7 +627,7 @@ Notes:
 
 - when looking at commits, you're looking at a diff between the commit and its
   parent
-  - that diff is calculated on the fly and nost stored anywhere
+  - that diff is calculated on the fly and not stored anywhere
   - how that diffing works doesn't really matter but every diff is the result of
     comparing 2 snapshots of the entire repo
   - …and those snapshots are references to the root tree of the repo at a
@@ -616,17 +660,24 @@ Notes:
 We want to read the contents `README.md` with `git cat-file` at the
 snapshot/commit 83d8100283ab5123f78f1e193ff29e37f686e636.
 
-- get our [workshop repository](https://github.com/simplabs/git-workshop)
+- get our workshop repository
+  - https://github.com/simplabs/git-workshop
 - get the OID of the tree that commit references
 - get the OID of the blob the tree points to at path `README.md`
 - get the contents of the blog with `git cat-file`
-
-Make use https://git-scm.com/docs and `git <command> --help`.
 
 Notes:
 
 - pair with 2 people & talk to each other about what you're doing
 - …how do files and changes end up in our repo?…
+
+---
+
+## Break
+
+Notes:
+
+- If there is any group still not setup and hasn't figured this out then let me know
 
 ---
 
@@ -689,6 +740,7 @@ Untracked files:
   test-file
 
 no changes added to commit
+
 » git add test-file
 » git status
 On branch main
@@ -696,6 +748,7 @@ Your branch is up to date with 'origin/main'.
 
 Changes to be committed:
   new file:   test-file
+
 » git reset test-file
 » git status
 On branch main
@@ -710,9 +763,8 @@ nothing added to commit but untracked files present
 Notes:
 
 - same example as before, new file is not tracked initially
-- adding it makes it tracked (we can ignore what staged for commit means for
-  now)
-- `reset` removes it from the repo again
+- adding it makes it tracked
+- in this particular case `reset` removes it from the repo again
 - …next, editing files that are in the repo already…
 
 ---
@@ -737,7 +789,6 @@ Notes:
 - we're editing `README.md` which is tracked by git
 - git reports the file as changed
 - so what does this staged for commit mean?
-  - we'll see that the text on this slide is not precisely correct
 
 ---
 
@@ -762,9 +813,11 @@ Your branch is up to date with 'origin/main'.
 
 Changes to be committed:
   modified:   README.md
+
 » git reset README.md
 Unstaged changes after reset:
 M	README.md
+
 » git status
 On branch main
 Your branch is up to date with 'origin/main'.
@@ -782,7 +835,7 @@ Notes:
 - we add it, it is now staged and will be part of the next commit
 - we then use `reset` to go back a step and make file changed again
 - notice that on this slide we say that a set of changes to a file will be part
-  of the next commit, not necessarily the entire file…
+  of the next commit, not necessarily the entire file… well let's see if we can demonstrate that
 
 ---
 
@@ -812,7 +865,8 @@ Notes:
 - README.md has been changed and those changes (not the file as such!) have been
   staged for commit
 - we then change the file again but those changes are not staged
-- this is the reason for the mark on the slide for the "changed" state
+- This is a very important point to consider, especially if you're just in the habit of running git add . (everything)
+  and then git commit
   - "changed" does not mean the contents of the file on disk are different from
     the contents of the same file in the HEAD revision of the repo but that they
     are different from the HEAD revision of the repo or a version of the file
@@ -1203,7 +1257,8 @@ Notes:
 Pushing sends your local state back to the origin so others can see it as well.
 
 ```bash
-» git ci -a -m "test commit"
+» git add .
+» git commit -m "test commit"
 [main 61381a3] test commit
  1 file changed, 1 insertion(+)
 » git status
